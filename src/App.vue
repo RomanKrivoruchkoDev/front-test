@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <a-layout>
+      <a-layout-sider><Sidebar></Sidebar></a-layout-sider>
+      <a-layout>
+        <a-layout-content><Map></Map></a-layout-content>
+      </a-layout>
+    </a-layout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Sidebar from './components/Sidebar.vue'
+import Map from './components/Map.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Sidebar,
+    Map
   }
 }
 </script>
@@ -23,6 +30,29 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+
+}
+
+.ant-layout.ant-layout-has-sider {
+  height: 100%;
+
+}
+
+#app .ant-layout-sider {
+  background: rgb(236, 237, 237);
+  line-height: 120px;
+}
+
+#app .ant-layout-content {
+  background: rgb(25, 26, 26);
+  color: #fff;
+  min-height: 100%;
+  line-height: 120px;
+}
+#app > .ant-layout:last-child {
+  margin: 0;
 }
 </style>
+
+
